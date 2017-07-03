@@ -9,7 +9,7 @@
 @foreach (var team in Model)
 {
     <div class="team" onclick="Panel.Expand(@(team.Id));">@team.Name</div>
-    <div id="Team@(team.Id)" class="teamUsers">
+    <div id="Team@(team.Id)" class="teamUsers" data-request-url="@Url.Action("Users", "PanelExample", new {TeamId = team.Id})">
         @Html.Partial("_TeamUsers", new Users{TeamId = team.Id})
     </div>
 }
