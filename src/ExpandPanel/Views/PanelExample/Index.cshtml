@@ -1,0 +1,17 @@
+﻿@using ExpandPanel.Models
+@model Teams
+@{
+    ViewBag.Title = "Panel Example";
+}
+
+<h2>Panel Example</h2>
+
+@foreach (var team in Model)
+{
+    <div class="team" onclick="Panel.Expand(@(team.Id));">@team.Name</div>
+    <div id="Team@(team.Id)" class="teamUsers">
+        @Html.Partial("_TeamUsers", new Users{TeamId = team.Id})
+    </div>
+}
+
+<script src="~/Scripts/PanelExample.js"></script>

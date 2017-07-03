@@ -1,0 +1,10 @@
+﻿@model ExpandPanel.Models.Users
+
+    <table>
+    @foreach (var user in Model)
+    {
+        <tr>
+            <td>@(user.Name)</td>
+        </tr>
+    }
+    </table>
